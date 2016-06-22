@@ -1,0 +1,36 @@
+﻿<Window x:Class="ContextSwitching.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <ScrollViewer>
+            <StackPanel>
+                <TextBlock Text="Przłączanie kontekstu"
+                           Margin="0,8,0,8" />
+                <Button Content="Switch Context"
+                        Click="OnContextSwitchEventHandler"/>
+                <TextBlock Text="Wyjątki" Margin="0,8,0,8" />
+                <Button Content="Throw on async void method"
+                        Click="OnAsyncVoidMethodThrowEventHandler"/>
+                <Button Content="Throw not awaited hot task (UTE)"
+                        Click="OnNotAwaitedHotTaskEventHandler" />
+                <Button Content="Throw on awaited hot task (ADUE)"
+                        Click="OnAwaitedHotTaskEventHandler" />
+                <Button Content="Throw on awaited task"
+                        Click="OnAwaitedTaskEventHandler" />
+                <Button Content="Throw on waited task"
+                        Click="OnWaitedTaskEventHandler" />
+                <Button Content="GC Collect"
+                        Click="OnCollectClick"></Button>
+                <TextBlock Text="Async overhead"
+                           Margin="0,8,0,8" />
+                <Button Content="Run Async vs Sync Method test"
+                        Click="OnAsyncOverheadRunEventHandler"></Button>
+                <TextBlock Text="Async WorkFlow" Margin="0,8"/>
+                <Button x:Name="WFB1" Content="Do something"/>
+                <Button x:Name="WFB2"
+                        Content="Confirm" />
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>
